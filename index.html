@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejemplo Absolutas y Relativas</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .contenedor {
+      background-color: lightblue;
+      width: 80%;         /* RELATIVO al ancho del body */
+      height: 200px;      /* ABSOLUTO */
+      margin: 20px auto;  /* ABSOLUTO para top/bottom, RELATIVO al viewport en horizontal */
+      padding: 20px;      /* ABSOLUTO */
+      text-align: center;
+      font-size: 2vw;     /* RELATIVO al ancho del viewport */
+    }
+
+    /* MEDIA QUERY para pantallas pequeñas */
+    @media (max-width: 600px) {
+      .contenedor {
+        width: 90%;         /* RELATIVO: que se adapte al padre */
+        font-size: 4vw;     /* RELATIVO: el texto se ajusta al ancho de la ventana */
+      }
+    }
+
+    /* MEDIA QUERY para pantallas grandes */
+    @media (min-width: 1000px) {
+      .contenedor {
+        width: 600px;       /* ABSOLUTO: en pantallas grandes, fijo */
+        font-size: 24px;    /* ABSOLUTO: texto fijo y legible */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contenedor">
+    ¡Yo me adapto según el tamaño de la pantalla!
+  </div>
+
+</body>
+</html>
